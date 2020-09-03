@@ -1,0 +1,36 @@
+<% if notice %>
+<aside id="notice"><%= notice %></aside>
+<% end %>
+<h1> Interviews </h1>
+<table>
+  <tfoot>
+    <td colspan="3">
+      <%= link_to 'New Interview', new_interview_path %>
+    </td>
+  </tr>
+</tfoot>
+<tbody>
+  <% @interviews.each do |interview| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    <td class="title">
+      <h3><%= interview.title %></h3>
+    </td>
+    <td class="starttime">
+      <h3><%= interview.starttime %></h3>
+    </td>
+    <td class="endtime">
+      <h3><%= interview.endtime %></h3>
+    </td>
+    <td class="actions">
+        <ul>
+          <li><%= link_to 'Show', interview %></li>
+          <li><%= link_to 'Edit', edit_interview_path(interview) %></li>
+          <li>
+            <%= link_to 'Destroy', interview, method: :delete, data: {confirm: 'Are you sure?'} %>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+  </table>

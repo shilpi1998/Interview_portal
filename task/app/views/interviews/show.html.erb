@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @interview.title %>
+</p>
+
+<p>
+  <strong>Starttime:</strong>
+  <%= @interview.starttime %>
+</p>
+
+<p>
+  <strong>Endtime:</strong>
+  <%= @interview.endtime %>
+</p>
+
+<%= link_to 'Edit', edit_interview_path(@interview) %> |
+<%= link_to 'Show Scheduled Interviews', interviews_path %> |
+<%= link_to 'New Interview', new_interview_path %>
